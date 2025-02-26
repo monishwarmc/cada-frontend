@@ -1,21 +1,17 @@
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8;
+}
+
+.store-photo {
+  @apply w-64 h-64 object-cover rounded-lg;
+}
+
+.product-photo {
+  @apply w-48 h-48 object-cover rounded-lg;
 }
