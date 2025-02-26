@@ -2,18 +2,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { getStore, getProductsByStore, addProduct, deleteProduct, BASE_URL, getStores, slugify } from '@/lib/api';
+import { getStore, getProductsByStore, deleteProduct, BASE_URL, getStores, slugify } from '@/lib/api';
 import DeleteButton from '@/components/DeleteButton';
 import React from 'react';
 
 export default function StorePage({ params }: { params: Promise<{ slug: string }> }) {
-  const router = useRouter();
   const slug = React.use(params).slug;
   const [store, setStore] = useState<any>(null);
   const [products, setProducts] = useState<any[]>([]);
-  const [sheetUrl, setSheetUrl] = useState('');
   const [storePhotoError, setStorePhotoError] = useState<string | null>(null);
   const [productPhotoErrors, setProductPhotoErrors] = useState<Record<string, string>>({});
   const [fetchError, setFetchError] = useState<string | null>(null);
