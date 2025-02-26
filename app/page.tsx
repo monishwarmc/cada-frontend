@@ -1,7 +1,7 @@
-
-// app/page.tsx
 import Link from 'next/link';
 import { getStores, slugify } from '@/lib/api';
+
+export const dynamic = 'force-dynamic'; // ✅ Ensures fresh data always
 
 export default async function Home() {
   const stores = await getStores();
